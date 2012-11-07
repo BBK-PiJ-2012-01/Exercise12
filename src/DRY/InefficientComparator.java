@@ -1,0 +1,35 @@
+package DRY;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: Sam Wright
+ * Date: 07/11/2012
+ * Time: 13:28
+ */
+public class InefficientComparator {
+    public int getMax(int n, int m) {
+        if (n > m) {
+            return n;
+        } else {
+            return m;
+        }
+    }
+
+    public double getMax(double d1, double d2) {
+        if (d1 > d2) {
+            return d1;
+        } else {
+            return d2;
+        }
+    }
+
+    public String getMax(String number1, String number2) {
+        int n1 = Integer.parseInt(number1);
+        int n2 = Integer.parseInt(number2);
+        if (n1 > n2) {
+            return number1;
+        } else {
+            return number2;
+        }
+    }
+}
