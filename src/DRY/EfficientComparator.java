@@ -6,13 +6,9 @@ package DRY;
  * Date: 07/11/2012
  * Time: 13:29
  */
-public class EfficientComparator <T extends Comparable<? super T>> {
-    public T getMax(T n, T m) {
-        if (n > m) {
-            return n;
-        } else {
-            return m;
-        }
+public class EfficientComparator {
+    public <T extends Comparable<T>> T getMax(T n, T m) {
+        return n.compareTo(m) > 0 ? n : m;
     }
 
     public double getMax(String n, String m) {
