@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
  * Date: 07/11/2012
  * Time: 13:52
  */
-public class EfficientComparatorTest {
-    EfficientComparator comp;
+public class GenericComparatorTest {
+    GenericComparator comp;
 
     @Before
     public void buildUp() {
-        comp = new EfficientComparator();
+        comp = new GenericComparator();
     }
 
     @Test
