@@ -7,8 +7,7 @@ package GenericList;
  * Time: 15:05
  */
 public interface GenericList<T> extends Iterable<T> {
-    void addEnd(T value);
-    void addStart(T value);
+    void add(T value);
 
     T popEnd();
     T popStart();

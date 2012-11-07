@@ -7,33 +7,58 @@ package GenericList;
  * Time: 15:27
  */
 public class ElementImpl<T> implements Element<T> {
+    private T value;
+    protected Element<T> next, prev;
 
-    ElementImpl(T value) {
-        throw new UnsupportedOperationException("Not supported yet");
+    public ElementImpl(T value) {
+        this.value = value;
     }
 
     @Override
     public T getValue() {
-        throw new UnsupportedOperationException("Not supported yet");
+        return value;
     }
 
     @Override
     public void setNext(Element<T> next) {
-        throw new UnsupportedOperationException("Not supported yet");
+        if (this.next != null && this.next.getPrev() != null) {
+            Element<T> old_next = this.next;
+            this.next = null;
+            old_next.setPrev(null);
+        }
+
+        this.next = next;
+
+        if (this.next != null && this.next.getPrev() != this)
+            this.next.setPrev(this);
     }
 
     @Override
     public void setPrev(Element<T> prev) {
-        throw new UnsupportedOperationException("Not supported yet");
+        if (this.prev != null && this.prev.getNext() != null) {
+            Element<T> old_prev = this.prev;
+            this.prev = null;
+            old_prev.setNext(null);
+        }
+
+        this.prev = prev;
+
+        if (this.prev != null && this.prev.getNext() != this)
+            this.prev.setNext(this);
     }
 
     @Override
     public Element<T> getNext() {
-        throw new UnsupportedOperationException("Not supported yet");
+        return next;
     }
 
     @Override
     public Element<T> getPrev() {
-        throw new UnsupportedOperationException("Not supported yet");
+        return prev;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
     }
 }

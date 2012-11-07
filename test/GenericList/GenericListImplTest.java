@@ -21,37 +21,21 @@ public class GenericListImplTest {
     @Before
     public void buildUp() {
         lst = new GenericListImpl<Integer>();
+        lst.add(1);
+        lst.add(2);
+        lst.add(3);
     }
 
     @Test
     public void testAddEnd() {
-        lst.addEnd(1);
-        lst.addEnd(2);
-        lst.addEnd(3);
-
         assertEquals((Integer) 3, lst.popEnd());
         assertEquals((Integer) 1, lst.popStart());
         assertEquals((Integer) 2, lst.popEnd());
     }
 
     @Test
-    public void testAddStart() {
-        lst.addStart(1);
-        lst.addStart(2);
-        lst.addStart(3);
-
-        assertEquals((Integer) 1, lst.popEnd());
-        assertEquals((Integer) 3, lst.popStart());
-        assertEquals((Integer) 2, lst.popEnd());
-    }
-
-    @Test
     public void testIterator() {
         List<Integer> inbuilt_lst = new LinkedList<Integer>();
-
-        lst.addEnd(1);
-        lst.addEnd(2);
-        lst.addEnd(3);
 
         for (int val : lst) {
             inbuilt_lst.add(val);
