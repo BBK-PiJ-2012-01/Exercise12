@@ -24,7 +24,6 @@ public class HashMap<K, V> implements Map<K, V> {
     @Override
     public V get(K key) {
         int key_hash = Math.abs(key.hashCode());
-        System.out.println("Getting hash " + key_hash);
         Entry<K, V> test_entry = buckets[key_hash % bucket_size];
         while(test_entry != null) {
             if (test_entry.getHash() == key_hash && test_entry.getKey().equals(key)) {

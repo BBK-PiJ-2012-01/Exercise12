@@ -12,5 +12,6 @@ public interface MultiValueMap <K, V> {
     void put(K key, V value);
     List<V> get(K key);
     void delete(K key, V value);
+    void deleteAll(K key, V value);
     void delete(K key);
 }
